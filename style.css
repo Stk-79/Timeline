@@ -80,7 +80,8 @@ body {
     position: relative;
     z-index: 2;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    /* transition: background-color 0.3s ease; */
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .timeline-dot:hover {
@@ -88,16 +89,19 @@ body {
 }
 
 .timeline-dot.active {
-    background-color: #ff5722;
+    /* background-color: #ff5722; */
+    background-color: white;
+    box-shadow: 0 0 0 4px #007bff;
+    transform: scale(1);
 }
 
 .timeline-date {
     position: absolute;
-    top: -20px;
+    top: -30px;
     /* Adjusts the position above the dot */
     /* left: 50%; */
     transform: translateX(-30%);
-    font-size: 14px;
+    font-size: 15px;
     color: grey;
     white-space: nowrap;
 }
