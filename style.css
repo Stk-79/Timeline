@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* .timeline-container {
+    text-align: center;
+} */
+
+.info {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 300px;
+    margin: 5rem 20rem;
+    display: flex;
+    align-items: center;
+}
+
+.imgs {
+    flex-basis: 30%;
+}
+
+.image {
+    width: 95%;
+    height: 50%;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 3rem auto;
+    display: block;
+    /* margin-right: 20px; */
+    /* between img & about*/
+    /* top: 4rem;
+    left: 3rem; */
+}
+
+.about {
+    flex-basis: 70%;
+    position: relative;
+    font-size: 20px;
+    /* top: 0; */
+    /* left: 100px; */
+    /* font-weight: bold; */
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #bebaba;
+    z-index: 1;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.timeline-dot:hover {
+    background-color: #0056b3;
+}
+
+.timeline-dot.active {
+    background-color: #ff5722;
+}
+
+.timeline-date {
+    position: absolute;
+    top: -20px;
+    /* Adjusts the position above the dot */
+    /* left: 50%; */
+    transform: translateX(-30%);
+    font-size: 14px;
+    color: grey;
+    white-space: nowrap;
+}
