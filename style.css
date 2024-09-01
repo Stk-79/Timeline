@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
@@ -24,6 +24,9 @@ body {
     margin: 5rem 20rem;
     display: flex;
     align-items: center;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .imgs {
@@ -39,17 +42,12 @@ body {
     display: block;
     /* margin-right: 20px; */
     /* between img & about*/
-    /* top: 4rem;
-    left: 3rem; */
 }
 
 .about {
     flex-basis: 70%;
     position: relative;
     font-size: 20px;
-    /* top: 0; */
-    /* left: 100px; */
-    /* font-weight: bold; */
 }
 
 .timeline {
@@ -61,6 +59,19 @@ body {
     margin: 2rem 0;
 }
 
+.timeline-bar {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #bebaba;
+    z-index: 1;
+    transition: background 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .timeline::before {
     content: '';
     position: absolute;
@@ -70,6 +81,7 @@ body {
     height: 5px;
     background-color: #bebaba;
     z-index: 1;
+    /* transition: background-color 0.3s ease-out; */
 }
 
 .timeline-dot {
@@ -80,7 +92,6 @@ body {
     position: relative;
     z-index: 2;
     cursor: pointer;
-    /* transition: background-color 0.3s ease; */
     transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out, transform 0.3s ease-out;
 }
 
@@ -99,9 +110,9 @@ body {
     position: absolute;
     top: -30px;
     /* Adjusts the position above the dot */
-    /* left: 50%; */
     transform: translateX(-30%);
     font-size: 15px;
-    color: grey;
+    font-weight: 500;
+    color: rgb(100, 100, 100);
     white-space: nowrap;
 }
