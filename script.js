@@ -19,11 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
       infoElement.style.transform = "translateX(20px)";
 
       timelineBar.style.opacity = 0.4;
-      timelineBar.style.transform = "translateX(10px)";
-
       setTimeout(() => {
         const percentage = (index / (dots.length - 1)) * 100;
-        timelineBar.style.background = `linear-gradient(to right, #007bff ${percentage}%, #bebaba ${percentage}%)`;
+        if (window.innerWidth < 768) {
+          timelineBar.style.transform = "translateY(10px)";
+          timelineBar.style.background = `linear-gradient(to bottom, #007bff ${Math.floor(
+            percentage
+          )}%, #bebaba ${Math.floor(percentage)}%)`;
+        } else {
+          timelineBar.style.transform = "translateX(10px)";
+
+          timelineBar.style.background = `linear-gradient(to right, #007bff ${Math.floor(
+            percentage
+          )}%, #bebaba ${Math.floor(percentage)}%)`;
+        }
         timelineBar.style.opacity = 1;
         timelineBar.style.transform = "translateX(0)";
       }, 500);
